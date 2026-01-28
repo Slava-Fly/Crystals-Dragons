@@ -15,9 +15,9 @@ enum Direction: String, CaseIterable {
     
     var dx: Int {
         switch self {
-        case .west:
-            return 1
         case .east:
+            return 1
+        case .west:
             return -1
         default:
             return 0
@@ -26,9 +26,9 @@ enum Direction: String, CaseIterable {
     
     var dy: Int {
         switch self {
-        case .north:
-            return 1
         case .south:
+            return 1
+        case .north:
             return -1
         default:
             return 0

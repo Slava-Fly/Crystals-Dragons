@@ -12,12 +12,12 @@ protocol GameViewModelDelegate: AnyObject {
 }
 
 final class GameViewModel {
-    private let engine: GameEngine
+    let engine: GameEngine
     
     weak var delegate: GameViewModelDelegate?
     
-    init(size: Int) {
-        engine = GameEngine(size: size)
+    init(roomCount: Int) {
+        engine = GameEngine(roomCount: roomCount)
     }
     
     func start() {

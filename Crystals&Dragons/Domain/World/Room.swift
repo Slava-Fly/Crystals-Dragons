@@ -16,6 +16,7 @@ struct Room {
     let x: Int
     let y: Int
     
+    var isActive: Bool
     var doors: Set<Direction>
     var items: [Item]
     var type: RoomType

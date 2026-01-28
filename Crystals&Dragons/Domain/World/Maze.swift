@@ -24,7 +24,9 @@ final class Maze {
             return nil
         }
         
-        return rooms[y][x]
+        let room = rooms[y][x]
+        
+        return room.isActive ? room : nil
     }
     
     func updateRoom(_ room: Room) {

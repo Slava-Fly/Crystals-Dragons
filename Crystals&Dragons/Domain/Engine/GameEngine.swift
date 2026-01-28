@@ -16,9 +16,9 @@ final class GameEngine {
     private var previousPosition: (x: Int, y: Int)?
     private var monsterEncounterStart: Date?
     
-    init(size: Int) {
-        maze = MazeGenerator().generate(size: size)
-        player = Player(x: 0, y: 0, steps: size * size * 2)
+    init(roomCount: Int) {
+        maze = MazeGenerator().generate(roomCount: roomCount)
+        player = Player(x: 0, y: 0, steps: roomCount * 2)
     }
     
     // Описание комнаты
@@ -36,9 +36,7 @@ final class GameEngine {
             )
         }
         
-        let goldDescription = room.gold.map {
-            "gold (\($0.amount) coins)"
-        } ?? ""
+        let goldDescription = room.gold.map { "gold (\($0.amount) coins)" } ?? ""
         
         // Основной текст комнаты
         var description = """
