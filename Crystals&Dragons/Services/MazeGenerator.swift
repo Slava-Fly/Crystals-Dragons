@@ -155,7 +155,12 @@ final class MazeGenerator {
         
         for room in rooms.flatMap({ $0 }) where room.isActive {
             if !room.items.isEmpty || room.monster != nil || room.gold != nil {
-                print("Room [\(room.x),\(room.y)] items: \(room.items), monster: \(room.monster?.name ?? "none"), gold: \(room.gold?.amount ?? 0)")
+                print("""
+                    Room [\(room.x),\(room.y)]
+                    items: \(room.items)
+                    monster: \(room.monster?.name ?? "none")
+                    gold: \(room.gold?.amount ?? 0)
+                    """)
             }
         }
         
